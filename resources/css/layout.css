@@ -1,0 +1,13 @@
+.bg::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url("https://w0.peakpx.com/wallpaper/647/586/HD-wallpaper-design-houses-house-layout-drawing-construction-of-houses.jpg");
+    background-size: cover;
+    opacity: 0.5;
+}
+
+
