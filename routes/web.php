@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\mailController;
 use App\Http\Middleware\adminMiddleware;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 
@@ -53,6 +54,7 @@ Route::resource('/profile', ProfileController::class)->middleware([adminMiddlewa
 Route::put('/reset/{profile}', [ProfileController::class, 'reset'])->name('reset')->middleware([adminMiddleware::class]);
 
 Route::resource('/admin', CatalogController::class, ['as' => 'Catalog'])->middleware([adminMiddleware::class]);
+Route::resource('/category', CategoryController::class)->middleware([adminMiddleware::class]);
 Route::resource('/message', MessageController::class)->middleware([adminMiddleware::class]);
 Route::Post('/message-delete', [MessageController::class, 'deletecek'])->name('deletecek')->middleware([adminMiddleware::class]);
 
