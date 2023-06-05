@@ -28,7 +28,7 @@ class CatalogController extends Controller
         }
 
         return view('Catalog.admin.index', [
-            'sort' => $catalog->paginate(10)
+            'sort' => $catalog->paginate(4)
         ]);
     }
 
@@ -144,8 +144,7 @@ class CatalogController extends Controller
             } else {
                 $datafile->gambar = $request->file('gambarnew')->store('gambar');
             }
-        }
-        ;
+        };
 
         $datafile->nama = $request->input('nama');
         $datafile->deskripsi = $request->input('deskripsi');
@@ -157,7 +156,6 @@ class CatalogController extends Controller
         $datafile->save();
         session()->flash('succes', 'Data berhasil diedit');
         return to_route('Catalog.admin.index');
-
     }
 
     /**
