@@ -18,7 +18,7 @@ class ProfileController extends Controller
      */
     public function index(Request $request)
     {
-        $prof = admin::latest();
+        $prof = admin::where('level','admin')->latest();
         if ($request->input('search')) {
             $prof->where('username', 'LIKE', '%' . $request->input('search') . '%');
         }

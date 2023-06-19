@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\catalog;
 use App\Models\category;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new category;
+
+        $data->name = $request->input('name');
+        $data->save();
+
+        session()->flash('succes', 'Data Telah Dibuat');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -51,7 +58,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -62,7 +69,10 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = category::find($id);
+        return view('category.edit',[
+            'category' => $data
+        ]);
     }
 
     /**
@@ -74,7 +84,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = category::find($id);
+
+        $data->name = $request->input('name');
+        $data->save();
+
+        session()->flash('succes', 'Data Telah Di update');
+        return redirect()->route('category.index');
     }
 
     /**

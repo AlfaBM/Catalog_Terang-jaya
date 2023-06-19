@@ -23,7 +23,7 @@
         </div>
         <div class="mb-3">
             <button class="btn btn-primary" type="submit">SUBMIT</button>
-            <a class="btn btn-outline-danger" type="button" href="{{ route('Catalog.admin.index') }}">BACK</a>
+            <a class="btn btn-outline-danger" type="button" href="{{ route('category.index') }}">BACK</a>
         </div>
     </form>
 </div>

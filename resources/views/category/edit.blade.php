@@ -9,7 +9,7 @@
         @method('PUT')
         <div class="mb-3 text-start">
             <label for="name">Nama Kategori</label>
-            <input class="form-control " type="text" name="name" id="name" value="$category['nama']" required autocomplete="off">
+            <input class="form-control " type="text" name="name" id="name" value="{{$category['name']}}" required autocomplete="off">
             @error('deskripsi')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -18,7 +18,7 @@
         </div>
         <div class="mb-3">
             <button class="btn btn-primary" type="submit">SUBMIT</button>
-            <a class="btn btn-outline-danger" type="button" href="{{ route('Catalog.admin.index') }}">BACK</a>
+            <a class="btn btn-outline-danger" type="button" href="{{ route('category.index') }}">BACK</a>
         </div>
     </form>
 </div>
